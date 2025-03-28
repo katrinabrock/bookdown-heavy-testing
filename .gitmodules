@@ -1,9 +1,12 @@
-[submodule "bookdown"]
-	path = bookdown
-	url = git@github.com:rstudio/bookdown.git
 [submodule "blogdown"]
 	path = blogdown
 	url = git@github.com:rstudio/blogdown.git
 [submodule "rmarkdown-book"]
 	path = rmarkdown-book
 	url = git@github.com:rstudio/rmarkdown-book.git
+[submodule "bookdown-main"]
+	path = bookdown-main
+	url = git@github.com:rstudio/bookdown.git
+[submodule "bookdown-test"]
+	path = bookdown-test
+	url = git@github.com:rstudio/bookdown.git
