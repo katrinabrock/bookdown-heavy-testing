@@ -1,0 +1,19 @@
+name: Run Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: build docker container
+        uses: hoverkraft-tech/compose-action@v2.0.1
+        with:
+          services: run-test
+          up-flags: "--exit-code-from run-test"
