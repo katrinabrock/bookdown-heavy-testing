@@ -6,6 +6,7 @@ invisible(lapply(c('main', 'test'), function(scenario) {
   if(dir.exists(env_dir)) unlink(env_dir, recursive = TRUE)
   R.utils::copyDirectory('/root/env-base', env_dir, recursive = TRUE)
   renv::load(env_dir)
+  renv::restore(env_dir)
   devtools::install(paste0('in-bookdown-', scenario))
   sapply(names(books_to_test), function(book) {
     output_dir <- file.path(getwd(), paste0('out-', scenario), book)

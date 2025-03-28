@@ -3,6 +3,8 @@ rm -rf \
     out-main \
     env-test \
     out-test \
+    env-base/renv/library \
+    env-base/renv/staging \
     travis-blogdown 
 
 cd /opt
