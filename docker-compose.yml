@@ -1,0 +1,14 @@
+services:
+  run-test:
+    build: .
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/
+  clean:
+    build: .
+    volumes:
+      - type: bind
+        source: ./
+        target: /opt/
+    entrypoint: ['rm', '-rf', 'main-env', 'main-out', 'test-env','test-out', 'travis-blogdown']

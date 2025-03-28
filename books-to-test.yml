@@ -1,0 +1,3 @@
+bookdown-main: inst/examples
+blogdown: docs
+rmarkdown-book: '.'
