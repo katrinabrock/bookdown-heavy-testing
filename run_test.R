@@ -17,4 +17,4 @@ invisible(lapply(c('main', 'test'), function(scenario) {
   })
 }))
 
-q(status =system2('diff',  c('-r', 'main-out/', 'test-out/')))
+q(status =system2('diff',  c('-r', 'out-main/', 'out-test/')))
