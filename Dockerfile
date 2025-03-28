@@ -29,6 +29,8 @@ RUN install2.r --error --ncpus -1 \
 COPY env-base /root/env-base
 RUN R -e "renv::restore('/root/env-base')"
 
+COPY clean.sh /root/clean.sh
+
 WORKDIR /opt
 
 ENTRYPOINT ["Rscript", "run_test.R"]

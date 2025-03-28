@@ -11,4 +11,4 @@ services:
       - type: bind
         source: ./
         target: /opt/
-    entrypoint: ['rm', '-rf', 'env-main', 'out-main', 'env-test','out-test', 'travis-blogdown']
+    entrypoint: ['sh', '/root/clean.sh']
