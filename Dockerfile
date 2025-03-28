@@ -26,8 +26,8 @@ RUN install2.r --error --ncpus -1 \
     && rm -rf /tmp/downloaded_packages \
     && strip /usr/local/lib/R/site-library/*/libs/*.so
 
-COPY env-base env-base
-RUN R -e "renv::restore('env-base')"
+COPY env-base /root/env-base
+RUN R -e "renv::restore('/root/env-base')"
 
 WORKDIR /opt
 
