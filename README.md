@@ -38,7 +38,7 @@ Changes not staged for commit:
 ```
 4. Commit and push submodule changes to your `bookdown-heavy-testing` fork. 
 5. Make a PR and wait for CI. (Good idea to mark it as a draft, since it is not intended to be merged.)
-6. Examine the diff. Scroll to the bottom of the `build docker container` github action log. You'll see the diff. Manually compare this diff to the analagous diff in main. The `bookdown-heavy-testing` `main` diff will show you the "expected differences" due to non determinism. Any changes that show up in your diff, but not in the `main` diff are likely the result of your changes.
+6. Examine the diff. Within the github action "Results" has which files and lines changed and "Full Results" has the actual changes.
 
 ## Testing new changes in **your** bookdown branch
 
@@ -77,3 +77,11 @@ Commit and push these changes. It doesn't really matter that you generating a di
 
 ## Note about locally switching branches
 If you are switching between branches of `bookdown-heavy-tesing` that where the submodules are pointing to different places, in addition to `git checkout`, you will need to run `git submodule update` when changing branches. This will get you back to the version of the
+
+# Adding a book
+
+1. Add the book as a submodule in the format `in-bookname`.
+2. Add the book to `books-to-test.yml` in the format `bookname: path/to/book`.
+3. Add any Linux dependencies to the dockerfile.
+4. Add any R dependencies to env-base (e.g. `renv::record(YOUR_R_PKG, project='env-base'))`).
+5. Add known non-deterministic sections to exceptions. The easiest way to do this is to first run [run_test.R]. (You can edit [books-to-test.yml] to include only the new book to speed things up). Then, source `parse-diff.R`, then `write_diffs(dir_diff('out-main/', 'out-test/', 'newexceptions.yml'))`. Examine the generated files: `results.txt`, `full_results.txt`, and `newexceptions.yml` to make sure they represent changes you would expect to see from run to run. If everything looks good, add the contents of `new_exceptions.yml` to `exceptions.yml`. 
