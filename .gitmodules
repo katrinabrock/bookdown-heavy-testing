@@ -9,4 +9,4 @@
 	url = git@github.com:rstudio/bookdown.git
 [submodule "bookdown-test"]
 	path = in-bookdown-test
-	url = git@github.com:rstudio/bookdown.git
+	url = git@github.com:katrinabrock/bookdown.git
