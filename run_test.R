@@ -9,13 +9,15 @@ invisible(lapply(c('main', 'test'), function(scenario) {
   renv::restore(env_dir)
   devtools::install(paste0('in-bookdown-', scenario))
   sapply(names(books_to_test), function(book) {
+    input_dir <- file.path(paste0('in-', book), books_to_test[[book]])
     output_dir <- file.path(getwd(), paste0('out-', scenario), book)
-    dir.create(output_dir, recursive = TRUE)
+    if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
     bookdown::render_book(
-      input = file.path(paste0('in-', book), books_to_test[[book]]),
+      input = input_dir,
       output_dir = output_dir
     )
+    unlink(bookdown:::files_cache_dirs(input_dir), recursive = TRUE)
   })
 }))
 
-q(status =system2('diff',  c('-r', 'out-main/', 'out-test/')))
+q(status = system2('diff', c('-r', 'out-main/', 'out-test/')))
