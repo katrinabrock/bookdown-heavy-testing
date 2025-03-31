@@ -77,3 +77,10 @@ Commit and push these changes. It doesn't really matter that you generating a di
 
 ## Note about locally switching branches
 If you are switching between branches of `bookdown-heavy-tesing` that where the submodules are pointing to different places, in addition to `git checkout`, you will need to run `git submodule update` when changing branches. This will get you back to the version of the
+
+# Adding a book
+
+1. Add the book as a submodule in the format `in-bookname`.
+2. Add the book to `books-to-test.yml` in the format `bookname: path/to/book`.
+3. Add any Linux dependencies to the dockerfile.
+4. Update the env-base by loading the envirn
