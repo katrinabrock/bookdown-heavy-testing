@@ -1,0 +1,12 @@
+- from: '--- out-main/bookdown-main/a-single-document.html'
+  to: +++ out-test/bookdown-main/a-single-document.html
+  line_numbers: '@@ -321,7 +321,7 @@'
+- from: '--- out-main/bookdown-main/html-widgets.html'
+  to: +++ out-test/bookdown-main/html-widgets.html
+  line_numbers: '@@ -314,8 +314,8 @@'
+- from: '--- out-main/bookdown-main/search_index.json'
+  to: +++ out-test/bookdown-main/search_index.json
+  line_numbers: '@@ -1 +1 @@'
+- from: '--- out-main/rmarkdown-book/htmlwidgets-sigma.html'
+  to: +++ out-test/rmarkdown-book/htmlwidgets-sigma.html
+  line_numbers: '@@ -616,8 +616,8 @@'

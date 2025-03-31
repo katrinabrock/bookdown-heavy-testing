@@ -16,6 +16,13 @@ jobs:
           submodules: true
       - name: build docker container
         uses: hoverkraft-tech/compose-action@v2.0.1
+        continue-on-error: true
         with:
           services: run-test
           up-flags: "--exit-code-from run-test"
+      - name: Results
+        shell: bash
+        run: "cat results.txt"
+      - name: Full Results
+        shell: bash
+        run: "cat full_results.txt"

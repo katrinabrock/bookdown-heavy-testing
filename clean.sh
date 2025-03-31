@@ -7,7 +7,8 @@ rm -rf \
     env-base/renv/staging \
     travis-blogdown 
 
-cd /opt
+rm results.txt full_results.txt
+
 git config --global --add safe.directory /opt/
 for dir in `ls -d in-*`; do
     git config --global --add safe.directory /opt/${dir}
