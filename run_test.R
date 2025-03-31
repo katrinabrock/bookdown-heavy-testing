@@ -1,3 +1,4 @@
+q(status = 1)
 options(install.packages.compile.from.source = "always")
 Sys.setenv(OPENSSL_CONF = '/dev/null') # https://stackoverflow.com/a/72679175/
 source('R/parse-diff.R')
