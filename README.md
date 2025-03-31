@@ -24,6 +24,7 @@ git submodule set-url in-bookdown-test git@github.com:YOUR_GITHUB_USERNAME/bookd
 ```
 Checkout the branch you want to test:
 ```
+git -C ./in-bookdown-test/ fetch
 git -C ./in-bookdown-test/ checkout YOUR_BOOKDOWN_BRANCH_NAME
 ```
 Git status should now look like this:
