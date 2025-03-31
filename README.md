@@ -16,7 +16,7 @@ These instructions assume you are already familiar with the workflow to fork, pu
 
 0. Make your change in bookdown and push to a fork of the bookdown repo. 
 1. Clone/pull latest for this (`bookdown-heavy-testing`) repo. Since it has submodules, in addition to `git clone` or `git pull` you will likely also need to run `git submodule update --init --recursive` from inside the repo.
-2. Create a branch in `bookdown-heavy-testing` repo as you normallyi would.
+2. Create a fork and a new branch from `bookdown-heavy-testing` repo as you normally would if you planned to contribute to the repo.
 3. Update the `in-bookdown-test` submodule to point to the `bookdown` repo branch that you want to test. Switch the url of this submodule to your fork:
 
 ```
