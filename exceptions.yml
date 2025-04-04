@@ -10,3 +10,9 @@
 - from: '--- out-main/rmarkdown-book/htmlwidgets-sigma.html'
   to: +++ out-test/rmarkdown-book/htmlwidgets-sigma.html
   line_numbers: '@@ -616,8 +616,8 @@'
+
+# just for split_by PR, expected changes for that PR
+# don't merge this exception into bookdown-heavy-testing
+- from: '--- out-main/bookdown-main/html.html'
+  to: '+++ out-test/bookdown-main/html.html'
+  line_numbers: '@@ -634,7 +634,7 @@'
